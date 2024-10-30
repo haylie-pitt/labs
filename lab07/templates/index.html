@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+</head>
+
+<body>
+    <a href="">
+        <h2> QR Code Generator </h2>
+    </a>
+    <form action="/" method="post">
+        <label for="data">Input your message:</label>
+        <input type="text" name="data" id="data" required>
+        <button type="submit">Generate QR Code</button>
+    </form>
+
+    {% if image %}
+    <img src="data:image/svg+xml;base64,{{ image }}" alt="QR Code" width="200px" height="200px">
+    <p>Message: {{ message }}</p>
+    {% endif %}
+    <p>© 2024 QR Code Generator</p>
+</body>
+
+</html>

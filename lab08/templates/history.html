@@ -1,0 +1,32 @@
+<!-- templates/history.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NASA APOD - History</title>
+</head>
+
+<body>
+    <h1>Astronomy Picture of the Day - History</h1>
+    <form action="{{ url_for('history') }}" method="post">
+        <label for="date">Choose a date:</label>
+        <input type="date" id="date" name="date" min="1995-06-16" max="{{ current_date }}" required>
+        <button type="submit">View APOD</button>
+    </form>
+
+    {% if apod_data %}
+    <h2>{{ selected_date }}</h2>
+    <img src="{{ apod_data.url }}" alt="APOD Image" width="600">
+    <p><strong>Title:</strong> {{ apod_data.title }}</p>
+    <p><strong>Description:</strong> {{ apod_data.explanation }}</p>
+    {% if apod_data.copyright %}
+    <p><strong>Copyright:</strong> {{ apod_data.copyright }}</p>
+    {% endif %}
+    {% else %}
+    <p>Select a date to view the Astronomy Picture of the Day.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Back to Today</a>
+</body>
+
+</html>

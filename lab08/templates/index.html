@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NASA APOD - Today's Picture</title>
+</head>
+
+<body>
+    <h1>Astronomy Picture of the Day</h1>
+    <h2>{{ current_date }}</h2>
+    {% if apod_data %}
+    <img src="{{ apod_data.url }}" alt="APOD Image" width="600">
+    <p><strong>Title:</strong> {{ apod_data.title }}</p>
+    <p><strong>Description:</strong> {{ apod_data.explanation }}</p>
+    {% if apod_data.copyright %}
+    <p><strong>Copyright:</strong> {{ apod_data.copyright }}</p>
+    {% endif %}
+    {% else %}
+    <p>Image could not be loaded.</p>
+    {% endif %}
+    <a href="{{ url_for('history') }}">View Previous APODs</a>
+</body>
+
+</html>

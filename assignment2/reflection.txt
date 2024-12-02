@@ -1,0 +1,23 @@
+
+Reflection on Functional Programming Approach
+
+In this assignment, the program was designed using a functional programming approach. Here’s how functional programming principles were applied:
+
+1. **Immutability**: 
+   - The program does not use mutable global state. All data passed to functions are treated as inputs and outputs without altering them during processing.
+   
+2. **Pure Functions**:
+   - Functions are designed to be independent of external variables. They take inputs, process them, and return a result without causing any side effects (like modifying external variables or states).
+   
+3. **Modularization**:
+   - The program is broken down into small, reusable functions, each responsible for one task. For example, `get_imports` extracts the imports, and `get_classes_and_functions` processes the classes and functions. These functions are easy to test and reuse.
+
+**Comparison with Object-Oriented Approach**:
+In an object-oriented programming (OOP) approach, the focus would have been on encapsulating data and behavior inside objects. For instance, classes like `FileAnalyzer` could store state about the file being analyzed and include methods for extracting information such as imports, classes, and functions.
+
+- In OOP, data and methods are grouped together in objects, and inheritance is often used to create reusable components.
+- In contrast, functional programming focuses on breaking tasks into simple, isolated functions.
+
+**Adherence to Principles**:
+- The program strictly adheres to functional programming principles. It avoids shared mutable state, focuses on pure functions, and ensures each function is self-contained.
+- This approach makes the program more predictable and easier to maintain, as each function operates independently and does not rely on the state of the program.
